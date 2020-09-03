@@ -12,13 +12,20 @@ class ContactListViewController: UIViewController {
     
     fileprivate let viewModel = ContactListViewModel()
 
-    @IBOutlet weak var contactsSearchBar: UISearchBar!
     @IBOutlet weak var contactsTableView: UITableView!
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Contacts"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        searchController.searchBar.delegate = self
         
         initViewModel()
     }
@@ -36,6 +43,15 @@ class ContactListViewController: UIViewController {
             }
         }
         
+    }
+    
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    var isFiltering: Bool {
+      let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+      return searchController.isActive && (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
     
 
@@ -58,7 +74,7 @@ extension ContactListViewController : UITableViewDelegate, UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
         
-        let contact = viewModel.contacts[indexPath.row]
+        let contact = isFiltering ? viewModel.filteredContacts[indexPath.row] : viewModel.contacts[indexPath.row];
         
         cell.configureWith(contact: contact)
         
@@ -66,7 +82,25 @@ extension ContactListViewController : UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.contacts.count
+        return isFiltering ? viewModel.filteredContacts.count : viewModel.contacts.count
     }
     
+}
+
+extension ContactListViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    let searchBar = searchController.searchBar
+    
+    guard let text = searchBar.text  else {
+        return
+    }
+   
+    viewModel.filterContacts(text: text.lowercased())
+  }
+}
+
+extension ContactListViewController: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+   
+  }
 }

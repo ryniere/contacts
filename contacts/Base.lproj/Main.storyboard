@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2E-SB-Aqm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,6 +7,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="W7s-p1-6LW">
+            <objects>
+                <navigationController id="M2E-SB-Aqm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sDd-Pg-yl8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="na4-ra-sRA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqK-xs-bYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-913" y="116"/>
+        </scene>
         <!--Contact List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -66,28 +82,37 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="9uC-QR-wO2"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="4Ip-gy-RFc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="NMi-5j-LEH"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z4L-8r-6t1" secondAttribute="trailing" id="K1l-Yw-xfu"/>
-                            <constraint firstItem="4Ip-gy-RFc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lhr-Bl-a0U"/>
                             <constraint firstItem="Z4L-8r-6t1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MIg-uW-1po"/>
-                            <constraint firstItem="4Ip-gy-RFc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WKg-iR-Czr"/>
+                            <constraint firstItem="Z4L-8r-6t1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cLJ-vV-l0F"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z4L-8r-6t1" secondAttribute="bottom" id="h1Q-gr-x2X"/>
-                            <constraint firstItem="Z4L-8r-6t1" firstAttribute="top" secondItem="4Ip-gy-RFc" secondAttribute="bottom" id="hYT-oq-RJm"/>
-                            <constraint firstItem="4Ip-gy-RFc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="udh-k1-FaI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="SbX-4H-4ve">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="IiK-Hb-kVf">
+                            <rect key="frame" x="207" y="22" width="0.0" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOr-MG-D3F">
+                                    <rect key="frame" x="-63.5" y="-10.5" width="127" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="fOr-MG-D3F" firstAttribute="centerY" secondItem="IiK-Hb-kVf" secondAttribute="centerY" id="Phn-Sp-yZA"/>
+                                <constraint firstItem="fOr-MG-D3F" firstAttribute="centerX" secondItem="IiK-Hb-kVf" secondAttribute="centerX" id="yCw-Wt-jt2"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
                     <connections>
-                        <outlet property="contactsSearchBar" destination="4Ip-gy-RFc" id="xsX-MB-3a2"/>
                         <outlet property="contactsTableView" destination="Z4L-8r-6t1" id="zik-Z3-ZoT"/>
                     </connections>
                 </viewController>

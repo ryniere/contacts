@@ -15,6 +15,7 @@ class ContactListViewModel {
     var reloadTableViewClosure: (()->())?
     
     var contacts = [Contact]()
+    var filteredContacts = [Contact]()
     
     func fetchContacts() {
         
@@ -38,6 +39,7 @@ class ContactListViewModel {
                         print(contact.givenName)
                         self.contacts.append(Contact(firstName: contact.givenName, lastName: contact.familyName, phoneNumber: contact.phoneNumbers.first?.value.stringValue ?? ""))
                     })
+                    self.reloadTableViewClosure?();
                 } catch let error {
                     print("Failed to enumerate contact", error)
                 }
@@ -45,6 +47,16 @@ class ContactListViewModel {
                 print("access denied")
             }
         }
+    }
+    
+    func filterContacts(text:String) {
+        
+        self.filteredContacts = contacts.filter { (contact : Contact) -> Bool in
+            return contact.firstName.lowercased().contains(text) || contact.lastName.lowercased().contains(text) || contact.phoneNumber.lowercased().contains(text)
+        }
+        
+        
+         self.reloadTableViewClosure?();
         
     }
 }
