@@ -15,6 +15,10 @@
 		41156EB125004D1600AD6AA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41156EAF25004D1600AD6AA3 /* LaunchScreen.storyboard */; };
 		41156EBC25004D1600AD6AA3 /* contactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156EBB25004D1600AD6AA3 /* contactsTests.swift */; };
 		41156EC725004D1600AD6AA3 /* contactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156EC625004D1600AD6AA3 /* contactsUITests.swift */; };
+		41156ED925004DBD00AD6AA3 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156ED825004DBD00AD6AA3 /* ContactListViewController.swift */; };
+		41156EDB250051A600AD6AA3 /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156EDA250051A600AD6AA3 /* ContactListViewModel.swift */; };
+		41156EDE2500562E00AD6AA3 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156EDD2500562E00AD6AA3 /* Contact.swift */; };
+		41156EE12500797D00AD6AA3 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156EE02500797D00AD6AA3 /* ContactTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		41156EA125004D1300AD6AA3 /* contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41156EA125004D1300AD6AA3 /* mycontacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mycontacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41156EA425004D1300AD6AA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41156EA625004D1300AD6AA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		41156EA825004D1300AD6AA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,12 +47,16 @@
 		41156EAD25004D1600AD6AA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41156EB025004D1600AD6AA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41156EB225004D1600AD6AA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41156EB725004D1600AD6AA3 /* contactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = contactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41156EB725004D1600AD6AA3 /* mycontactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mycontactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41156EBB25004D1600AD6AA3 /* contactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsTests.swift; sourceTree = "<group>"; };
 		41156EBD25004D1600AD6AA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41156EC225004D1600AD6AA3 /* contactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = contactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41156EC225004D1600AD6AA3 /* mycontactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mycontactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41156EC625004D1600AD6AA3 /* contactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsUITests.swift; sourceTree = "<group>"; };
 		41156EC825004D1600AD6AA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41156ED825004DBD00AD6AA3 /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		41156EDA250051A600AD6AA3 /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
+		41156EDD2500562E00AD6AA3 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		41156EE02500797D00AD6AA3 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +97,9 @@
 		41156EA225004D1300AD6AA3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				41156EA125004D1300AD6AA3 /* contacts.app */,
-				41156EB725004D1600AD6AA3 /* contactsTests.xctest */,
-				41156EC225004D1600AD6AA3 /* contactsUITests.xctest */,
+				41156EA125004D1300AD6AA3 /* mycontacts.app */,
+				41156EB725004D1600AD6AA3 /* mycontactsTests.xctest */,
+				41156EC225004D1600AD6AA3 /* mycontactsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +107,8 @@
 		41156EA325004D1300AD6AA3 /* contacts */ = {
 			isa = PBXGroup;
 			children = (
+				41156EDC250055FB00AD6AA3 /* Models */,
+				41156ED425004D9700AD6AA3 /* Scenes */,
 				41156EA425004D1300AD6AA3 /* AppDelegate.swift */,
 				41156EA625004D1300AD6AA3 /* SceneDelegate.swift */,
 				41156EA825004D1300AD6AA3 /* ViewController.swift */,
@@ -128,12 +138,62 @@
 			path = contactsUITests;
 			sourceTree = "<group>";
 		};
+		41156ED425004D9700AD6AA3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				41156ED525004D9E00AD6AA3 /* ContactList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		41156ED525004D9E00AD6AA3 /* ContactList */ = {
+			isa = PBXGroup;
+			children = (
+				41156EDF2500795A00AD6AA3 /* Cell */,
+				41156ED725004DAB00AD6AA3 /* ViewModel */,
+				41156ED625004DA600AD6AA3 /* View */,
+			);
+			path = ContactList;
+			sourceTree = "<group>";
+		};
+		41156ED625004DA600AD6AA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				41156ED825004DBD00AD6AA3 /* ContactListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		41156ED725004DAB00AD6AA3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				41156EDA250051A600AD6AA3 /* ContactListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		41156EDC250055FB00AD6AA3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				41156EDD2500562E00AD6AA3 /* Contact.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		41156EDF2500795A00AD6AA3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				41156EE02500797D00AD6AA3 /* ContactTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		41156EA025004D1300AD6AA3 /* contacts */ = {
+		41156EA025004D1300AD6AA3 /* mycontacts */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41156ECB25004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "contacts" */;
+			buildConfigurationList = 41156ECB25004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "mycontacts" */;
 			buildPhases = (
 				41156E9D25004D1300AD6AA3 /* Sources */,
 				41156E9E25004D1300AD6AA3 /* Frameworks */,
@@ -143,14 +203,14 @@
 			);
 			dependencies = (
 			);
-			name = contacts;
+			name = mycontacts;
 			productName = contacts;
-			productReference = 41156EA125004D1300AD6AA3 /* contacts.app */;
+			productReference = 41156EA125004D1300AD6AA3 /* mycontacts.app */;
 			productType = "com.apple.product-type.application";
 		};
-		41156EB625004D1600AD6AA3 /* contactsTests */ = {
+		41156EB625004D1600AD6AA3 /* mycontactsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41156ECE25004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "contactsTests" */;
+			buildConfigurationList = 41156ECE25004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "mycontactsTests" */;
 			buildPhases = (
 				41156EB325004D1600AD6AA3 /* Sources */,
 				41156EB425004D1600AD6AA3 /* Frameworks */,
@@ -161,14 +221,14 @@
 			dependencies = (
 				41156EB925004D1600AD6AA3 /* PBXTargetDependency */,
 			);
-			name = contactsTests;
+			name = mycontactsTests;
 			productName = contactsTests;
-			productReference = 41156EB725004D1600AD6AA3 /* contactsTests.xctest */;
+			productReference = 41156EB725004D1600AD6AA3 /* mycontactsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		41156EC125004D1600AD6AA3 /* contactsUITests */ = {
+		41156EC125004D1600AD6AA3 /* mycontactsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41156ED125004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "contactsUITests" */;
+			buildConfigurationList = 41156ED125004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "mycontactsUITests" */;
 			buildPhases = (
 				41156EBE25004D1600AD6AA3 /* Sources */,
 				41156EBF25004D1600AD6AA3 /* Frameworks */,
@@ -179,9 +239,9 @@
 			dependencies = (
 				41156EC425004D1600AD6AA3 /* PBXTargetDependency */,
 			);
-			name = contactsUITests;
+			name = mycontactsUITests;
 			productName = contactsUITests;
-			productReference = 41156EC225004D1600AD6AA3 /* contactsUITests.xctest */;
+			productReference = 41156EC225004D1600AD6AA3 /* mycontactsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +267,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 41156E9C25004D1300AD6AA3 /* Build configuration list for PBXProject "contacts" */;
+			buildConfigurationList = 41156E9C25004D1300AD6AA3 /* Build configuration list for PBXProject "mycontacts" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -220,9 +280,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				41156EA025004D1300AD6AA3 /* contacts */,
-				41156EB625004D1600AD6AA3 /* contactsTests */,
-				41156EC125004D1600AD6AA3 /* contactsUITests */,
+				41156EA025004D1300AD6AA3 /* mycontacts */,
+				41156EB625004D1600AD6AA3 /* mycontactsTests */,
+				41156EC125004D1600AD6AA3 /* mycontactsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,7 +319,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41156EDE2500562E00AD6AA3 /* Contact.swift in Sources */,
+				41156EDB250051A600AD6AA3 /* ContactListViewModel.swift in Sources */,
 				41156EA925004D1300AD6AA3 /* ViewController.swift in Sources */,
+				41156ED925004DBD00AD6AA3 /* ContactListViewController.swift in Sources */,
+				41156EE12500797D00AD6AA3 /* ContactTableViewCell.swift in Sources */,
 				41156EA525004D1300AD6AA3 /* AppDelegate.swift in Sources */,
 				41156EA725004D1300AD6AA3 /* SceneDelegate.swift in Sources */,
 			);
@@ -286,12 +350,12 @@
 /* Begin PBXTargetDependency section */
 		41156EB925004D1600AD6AA3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 41156EA025004D1300AD6AA3 /* contacts */;
+			target = 41156EA025004D1300AD6AA3 /* mycontacts */;
 			targetProxy = 41156EB825004D1600AD6AA3 /* PBXContainerItemProxy */;
 		};
 		41156EC425004D1600AD6AA3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 41156EA025004D1300AD6AA3 /* contacts */;
+			target = 41156EA025004D1300AD6AA3 /* mycontacts */;
 			targetProxy = 41156EC325004D1600AD6AA3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -484,7 +548,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/contacts.app/contacts";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mycontacts.app/mycontacts";
 			};
 			name = Debug;
 		};
@@ -506,7 +570,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/contacts.app/contacts";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mycontacts.app/mycontacts";
 			};
 			name = Release;
 		};
@@ -553,7 +617,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		41156E9C25004D1300AD6AA3 /* Build configuration list for PBXProject "contacts" */ = {
+		41156E9C25004D1300AD6AA3 /* Build configuration list for PBXProject "mycontacts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41156EC925004D1600AD6AA3 /* Debug */,
@@ -562,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41156ECB25004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "contacts" */ = {
+		41156ECB25004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "mycontacts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41156ECC25004D1600AD6AA3 /* Debug */,
@@ -571,7 +635,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41156ECE25004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "contactsTests" */ = {
+		41156ECE25004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "mycontactsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41156ECF25004D1600AD6AA3 /* Debug */,
@@ -580,7 +644,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41156ED125004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "contactsUITests" */ = {
+		41156ED125004D1600AD6AA3 /* Build configuration list for PBXNativeTarget "mycontactsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41156ED225004D1600AD6AA3 /* Debug */,
