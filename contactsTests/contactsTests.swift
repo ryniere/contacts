@@ -7,9 +7,11 @@
 //
 
 import XCTest
-@testable import contacts
+@testable import MyContacts
 
 class contactsTests: XCTestCase {
+    
+    let contactListViewModel = ContactListViewModel()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,9 +21,15 @@ class contactsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testInitialContactCount() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertEqual(contactListViewModel.contacts.count, 0, "Initial count for contacts is incorrect")
+    }
+    
+    func testContactCount() throws {
+        contactListViewModel.fetchContacts()
+        XCTAssertEqual(contactListViewModel.contacts.count > 0, true, "count for contacts is incorrect")
     }
 
     func testPerformanceExample() throws {
