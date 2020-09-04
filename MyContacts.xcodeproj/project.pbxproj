@@ -19,6 +19,8 @@
 		41156EDB250051A600AD6AA3 /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156EDA250051A600AD6AA3 /* ContactListViewModel.swift */; };
 		41156EDE2500562E00AD6AA3 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156EDD2500562E00AD6AA3 /* Contact.swift */; };
 		41156EE12500797D00AD6AA3 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41156EE02500797D00AD6AA3 /* ContactTableViewCell.swift */; };
+		4184D33125018EEC00498678 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184D33025018EEC00498678 /* ContactDetailViewController.swift */; };
+		4184D33325018F0300498678 /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184D33225018F0300498678 /* ContactDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		41156EDA250051A600AD6AA3 /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
 		41156EDD2500562E00AD6AA3 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		41156EE02500797D00AD6AA3 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		4184D33025018EEC00498678 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		4184D33225018F0300498678 /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 		41156ED425004D9700AD6AA3 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4184D32D25018EB200498678 /* ContactDetail */,
 				41156ED525004D9E00AD6AA3 /* ContactList */,
 			);
 			path = Scenes;
@@ -186,6 +191,31 @@
 				41156EE02500797D00AD6AA3 /* ContactTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		4184D32D25018EB200498678 /* ContactDetail */ = {
+			isa = PBXGroup;
+			children = (
+				4184D32F25018ECE00498678 /* ViewModel */,
+				4184D32E25018EC900498678 /* View */,
+			);
+			path = ContactDetail;
+			sourceTree = "<group>";
+		};
+		4184D32E25018EC900498678 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4184D33025018EEC00498678 /* ContactDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4184D32F25018ECE00498678 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4184D33225018F0300498678 /* ContactDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +355,8 @@
 				41156ED925004DBD00AD6AA3 /* ContactListViewController.swift in Sources */,
 				41156EE12500797D00AD6AA3 /* ContactTableViewCell.swift in Sources */,
 				41156EA525004D1300AD6AA3 /* AppDelegate.swift in Sources */,
+				4184D33125018EEC00498678 /* ContactDetailViewController.swift in Sources */,
+				4184D33325018F0300498678 /* ContactDetailViewModel.swift in Sources */,
 				41156EA725004D1300AD6AA3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

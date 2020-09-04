@@ -85,6 +85,11 @@ extension ContactListViewController : UITableViewDelegate, UITableViewDataSource
         return isFiltering ? viewModel.filteredContacts.count : viewModel.contacts.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64
+    }
+    
+    
 }
 
 extension ContactListViewController: UISearchResultsUpdating {

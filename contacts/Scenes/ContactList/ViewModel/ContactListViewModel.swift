@@ -57,6 +57,5 @@ class ContactListViewModel {
         
         
          self.reloadTableViewClosure?();
-        
     }
 }
