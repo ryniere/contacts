@@ -16,37 +16,42 @@ class ContactListViewModel {
     
     var contacts = [Contact]()
     var filteredContacts = [Contact]()
+    var selectedIndex = 0
     
     func fetchContacts() {
         
-         let store = CNContactStore()
         
-        store.requestAccess(for: .contacts) { (granted, error) in
-        
-           if let error = error {
-                print("failed to request access", error)
-                return
-            }
+        if contacts.isEmpty {
+            let store = CNContactStore()
             
-            if granted {
-                print("access granted")
-                
-                let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
-                let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
-                
-                do {
-                    try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
-                        print(contact.givenName)
-                        self.contacts.append(Contact(firstName: contact.givenName, lastName: contact.familyName, phoneNumber: contact.phoneNumbers.first?.value.stringValue ?? ""))
-                    })
-                    self.reloadTableViewClosure?();
-                } catch let error {
-                    print("Failed to enumerate contact", error)
+            store.requestAccess(for: .contacts) { (granted, error) in
+            
+               if let error = error {
+                    print("failed to request access", error)
+                    return
                 }
-            } else {
-                print("access denied")
+                
+                if granted {
+                    print("access granted")
+                    
+                    let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
+                    let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
+                    
+                    do {
+                        try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointer) in
+                            print(contact.givenName)
+                            self.contacts.append(Contact(firstName: contact.givenName, lastName: contact.familyName, phoneNumber: contact.phoneNumbers.first?.value.stringValue ?? ""))
+                        })
+                        self.reloadTableViewClosure?();
+                    } catch let error {
+                        print("Failed to enumerate contact", error)
+                    }
+                } else {
+                    print("access denied")
+                }
             }
         }
+         
     }
     
     func filterContacts(text:String) {

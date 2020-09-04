@@ -42,7 +42,6 @@ class ContactListViewController: UIViewController {
                 self?.contactsTableView.reloadData()
             }
         }
-        
     }
     
     var isSearchBarEmpty: Bool {
@@ -55,15 +54,18 @@ class ContactListViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showContactDetail" {
+            // Setup new view controller
+            let vc = segue.destination as? ContactDetailViewController
+            vc!.viewModel.contact = isFiltering ? viewModel.filteredContacts[viewModel.selectedIndex] : viewModel.contacts[viewModel.selectedIndex]
+        }
     }
-    */
 
 }
 
@@ -89,7 +91,10 @@ extension ContactListViewController : UITableViewDelegate, UITableViewDataSource
         return 64
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: "showContactDetail", sender: self)
+    }
 }
 
 extension ContactListViewController: UISearchResultsUpdating {
